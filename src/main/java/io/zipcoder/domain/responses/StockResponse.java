@@ -22,7 +22,7 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     @JsonProperty("Meta Data")
     private MetaData metaData;
 
-    @JsonProperty("Time Series")
+/*    @JsonProperty("Time Series (Daily)")
     private HashMap<Date, T> temporalResolutionData;
 
     public HashMap<Date, T> getTemporalResolutionData() {
@@ -31,7 +31,7 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
 
     public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
-    }
+    }*/
 
     public MetaData getMetaData() {
         return metaData;
@@ -45,7 +45,7 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     public String toString() {
         return "StockResponse{" +
                 "metadata='" + metaData.getInformation()  + '\'' +
-                ", time=" + temporalResolutionData.toString() +
+          //      ", time=" + temporalResolutionData.toString() +
                 '}';
     }
 }

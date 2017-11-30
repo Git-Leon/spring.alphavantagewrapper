@@ -31,7 +31,7 @@ public class EndPoint<T extends StockResponse> {
          *  @param <T> - Some sub-type of StockResponse
          *  @param restTemplate - the rest template to get respective object
          *  @return respective StockResponse object */
-        return restTemplate.getForObject(apiCall, cls);
+        return restTemplate.getForObject("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo", cls);
     }
 
     @Override
