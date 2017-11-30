@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.zipcoder.domain.temporalresolution.DailyTemporalResolution;
 
 import javax.persistence.Entity;
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashMap;
 
 /**
@@ -12,6 +12,10 @@ import java.util.HashMap;
  */
 @Entity
 public class DailyStockResponse extends StockResponse<DailyTemporalResolution> {
+    public DailyStockResponse() {
+        super.temporalResolutionData = new HashMap<>();
+    }
+
     @JsonProperty("Time Series (Daily)")
     private HashMap<Date, DailyTemporalResolution> temporalResolutionData;
 

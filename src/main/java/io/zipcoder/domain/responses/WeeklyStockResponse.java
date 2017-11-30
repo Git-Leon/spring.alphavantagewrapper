@@ -12,6 +12,18 @@ import java.util.HashMap;
  */
 @Entity
 public class WeeklyStockResponse extends StockResponse<WeeklyTemporalResolution> {
+    public WeeklyStockResponse() {
+        super.temporalResolutionData = new HashMap<>();
+    }
+
     @JsonProperty("Time Series (Weekly)")
     private HashMap<Date, WeeklyTemporalResolution> temporalResolutionData;
+
+    public HashMap<Date, WeeklyTemporalResolution> getTemporalResolutionData() {
+        return temporalResolutionData;
+    }
+
+    public void setTemporalResolutionData(HashMap<Date, WeeklyTemporalResolution> temporalResolutionData) {
+        this.temporalResolutionData = temporalResolutionData;
+    }
 }
