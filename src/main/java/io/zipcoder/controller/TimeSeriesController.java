@@ -3,6 +3,7 @@ package io.zipcoder.controller;
 import io.zipcoder.domain.responses.StockResponse;
 import io.zipcoder.utilities.apiwrapper.endpoint.EndPoint;
 import io.zipcoder.utilities.apiwrapper.endpoint.TemporalEndPointFactory;
+import io.zipcoder.utilities.general.FunctionalUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.MappedSuperclass;
+import java.util.function.BiFunction;
+import java.util.function.Supplier;
 
 /**
  * Created by leon on 11/30/17.
@@ -31,14 +34,29 @@ abstract public class TimeSeriesController<
         this.cls = cls;
     }
 
-    @GetMapping(value = "/get")
+    @GetMapping(value = "/getFull")
     public ResponseEntity<StockResponseType> getFull(
             @PathVariable("interval") String interval,
             @PathVariable("symbol") String symbol) {
 
+        return get(FunctionalUtils.bind(endpointFactory::getFullOutput, interval, symbol));
+    }
+
+    @GetMapping(value = "/getCompact")
+    public ResponseEntity<StockResponseType> getCompact(
+            @PathVariable("interval") String interval,
+            @PathVariable("symbol") String symbol) {
+
+        return get(FunctionalUtils.bind(endpointFactory::getCompactOutput, interval, symbol));
+    }
+
+    public ResponseEntity<StockResponseType> get(
+            Supplier<EndPoint<StockResponseType>> getMethod) {
         MultiValueMap<String, String> headers = null;
-        EndPoint<StockResponseType> endpoint = endpointFactory.getFullOutput(interval, symbol);
+        EndPoint<StockResponseType> endpoint = getMethod.get();
         StockResponseType stockResponse = endpoint.call(cls);
         return new ResponseEntity<>(stockResponse, headers, HttpStatus.OK);
     }
+
+
 }
