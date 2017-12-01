@@ -16,13 +16,16 @@ public class WeeklyStockResponse extends StockResponse<WeeklyTemporalResolution>
         super.temporalResolutionData = new HashMap<>();
     }
 
+    // TODO - Abstract this to the StockResponse
     @JsonProperty("Time Series (Weekly)")
     private HashMap<Date, WeeklyTemporalResolution> temporalResolutionData;
 
+    // TODO - Abstract this to the StockResponse
     public HashMap<Date, WeeklyTemporalResolution> getTemporalResolutionData() {
         return temporalResolutionData;
     }
 
+    // TODO - Abstract this to the StockResponse
     public void setTemporalResolutionData(HashMap<Date, WeeklyTemporalResolution> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
     }

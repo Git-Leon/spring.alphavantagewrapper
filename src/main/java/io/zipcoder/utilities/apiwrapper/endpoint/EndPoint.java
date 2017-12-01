@@ -1,6 +1,7 @@
 package io.zipcoder.utilities.apiwrapper.endpoint;
 
 import io.zipcoder.domain.responses.StockResponse;
+import io.zipcoder.utilities.apiwrapper.APIKey;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamInterval;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamOutputSize;
@@ -10,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * Created by leon on 9/14/17.
  */
-public class EndPoint<T extends StockResponse> {
+public class EndPoint<StockResponseType extends StockResponse> {
     private final String apiCall;
 
     EndPoint(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize, String apiKey) {
@@ -22,20 +23,24 @@ public class EndPoint<T extends StockResponse> {
                 "&apikey=" + apiKey;
     }
 
-    public T call(Class<T> cls) {
+    public StockResponseType call(Class<StockResponseType> cls) {
         return call(new RestTemplate(), cls);
     }
 
-    public T call(RestTemplate restTemplate, Class<T> cls) {
-        /** @param cls - Some class of parameterized type T
-         *  @param <T> - Some sub-type of StockResponse
+    public StockResponseType call(RestTemplate restTemplate, Class<StockResponseType> cls) {
+        /** @param cls - Some class of parameterized type StockResponseType
+         *  @param <StockResponseType> - Some sub-type of StockResponse
          *  @param restTemplate - the rest template to get respective object
          *  @return respective StockResponse object */
-        return restTemplate.getForObject("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo", cls);
+        return restTemplate.getForObject(getApiCall().toString(), cls);
     }
 
     @Override
     public String toString() {
+        return apiCall;
+    }
+
+    public String getApiCall() {
         return apiCall;
     }
 }

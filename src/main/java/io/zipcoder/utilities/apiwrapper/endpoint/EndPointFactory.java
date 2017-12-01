@@ -1,6 +1,7 @@
 package io.zipcoder.utilities.apiwrapper.endpoint;
 
 import io.zipcoder.domain.responses.StockResponse;
+import io.zipcoder.utilities.apiwrapper.APIKey;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamInterval;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamOutputSize;
@@ -13,21 +14,21 @@ import java.util.logging.Logger;
  */
 public final class EndPointFactory<T extends StockResponse> {
     private final Logger log = Logger.getLogger(getClass().getSimpleName());
-    private final String apiKey;
+    private final APIKey apiKey;
 
-    public EndPointFactory(String apiKey) {
+    public EndPointFactory(APIKey apiKey) {
         this.apiKey = apiKey;
     }
 
-    public EndPoint<T> get(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
-        EndPoint endPoint = new EndPoint<>(function, interval, symbol, outputSize, apiKey);
+    protected EndPoint<T> get(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
+        EndPoint<T> endPoint = new EndPoint(function, interval, symbol, outputSize, apiKey.toString());
         log.info("Successfully created new endpoint.");
         log.info("EndPoint URI = " + endPoint.toString());
         return endPoint;
     }
 
 
-    public EndPoint get(ParamFunction function, ParamInterval interval, ParamSymbol symbol) {
+    protected EndPoint get(ParamFunction function, ParamInterval interval, ParamSymbol symbol) {
         return get(function, interval, symbol, ParamOutputSize.FULL);
     }
 

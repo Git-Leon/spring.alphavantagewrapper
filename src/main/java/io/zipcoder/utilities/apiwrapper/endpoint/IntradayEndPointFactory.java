@@ -7,8 +7,12 @@ import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
 /**
  * Created by leon on 9/15/17.
  */
-public class IntraDailyEndPointFactory extends TemporalEndPointFactory<IntradayStockResponse> {
-    public IntraDailyEndPointFactory(String apiKey) {
+public class IntradayEndPointFactory extends TemporalEndPointFactory<IntradayStockResponse> {
+    public IntradayEndPointFactory(APIKey apiKey) {
         super(apiKey, ParamFunction.INTRADAY);
+    }
+
+    public IntradayEndPointFactory() {
+        super(ParamFunction.WEEKLY);
     }
 }

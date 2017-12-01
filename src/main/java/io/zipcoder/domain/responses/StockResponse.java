@@ -23,15 +23,14 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     private MetaData metaData;
 
 
+    //TODO - Find solution for dynamic annotation
     protected HashMap<Date, T> temporalResolutionData;
 
-    public HashMap<Date, T> getTemporalResolutionData() {
-        return temporalResolutionData;
-    }
+    // TODO - Remove this after finding dynamic annotation
+    abstract public HashMap<Date, T> getTemporalResolutionData();
 
-    public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData) {
-        this.temporalResolutionData = temporalResolutionData;
-    }
+    // TODO - Remove this after finding dynamic annotation
+    abstract public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData);
 
     public MetaData getMetaData() {
         return metaData;

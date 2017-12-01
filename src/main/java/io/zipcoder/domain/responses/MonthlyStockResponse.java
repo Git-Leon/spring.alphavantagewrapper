@@ -16,13 +16,16 @@ public class MonthlyStockResponse extends StockResponse<MonthlyTemporalResolutio
         super.temporalResolutionData = new HashMap<>();
     }
 
+    // TODO - Abstract this to the StockResponse
     @JsonProperty("Time Series (Monthly)")
     private HashMap<Date, MonthlyTemporalResolution> temporalResolutionData;
 
+    // TODO - Abstract this to the StockResponse
     public HashMap<Date, MonthlyTemporalResolution> getTemporalResolutionData() {
         return temporalResolutionData;
     }
 
+    // TODO - Abstract this to the StockResponse
     public void setTemporalResolutionData(HashMap<Date, MonthlyTemporalResolution> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
     }

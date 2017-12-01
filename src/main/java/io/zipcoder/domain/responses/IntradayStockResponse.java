@@ -16,13 +16,16 @@ public class IntradayStockResponse extends StockResponse<IntraDailyTemporalResol
         super.temporalResolutionData = new HashMap<>();
     }
 
+    // TODO - Abstract this to the StockResponse
     @JsonProperty("Time Series (Intraday)")
     private HashMap<Date, IntraDailyTemporalResolution> temporalResolutionData;
 
+    // TODO - Abstract this to the StockResponse
     public HashMap<Date, IntraDailyTemporalResolution> getTemporalResolutionData() {
         return temporalResolutionData;
     }
 
+    // TODO - Abstract this to the StockResponse
     public void setTemporalResolutionData(HashMap<Date, IntraDailyTemporalResolution> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
     }
