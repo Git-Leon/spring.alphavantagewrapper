@@ -1,6 +1,7 @@
 package io.zipcoder.utilities.apiwrapper.endpoint;
 
 import io.zipcoder.domain.responses.IntradayStockResponse;
+import io.zipcoder.utilities.apiwrapper.APIKey;
 import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
 
 /**
