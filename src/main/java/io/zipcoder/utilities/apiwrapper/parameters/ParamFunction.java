@@ -12,6 +12,6 @@ public enum ParamFunction {
     @Override
     public String toString() {
         // API representation
-        return "TIME_SERIES_" + this.name();
+        return "function=TIME_SERIES_" + this.name();
     }
 }

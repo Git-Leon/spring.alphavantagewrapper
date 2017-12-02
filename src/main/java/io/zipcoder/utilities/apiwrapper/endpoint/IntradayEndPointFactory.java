@@ -13,6 +13,6 @@ public class IntradayEndPointFactory extends TemporalEndPointFactory<IntradaySto
     }
 
     public IntradayEndPointFactory() {
-        super(ParamFunction.WEEKLY);
+        super(ParamFunction.INTRADAY);
     }
 }

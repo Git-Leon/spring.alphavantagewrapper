@@ -31,15 +31,16 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
     }
 
-	@Bean
+    @Bean
     public CommandLineRunner run(RestTemplate restTemplate) {
-	    return args -> {
-	        // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo
+        return args -> {
+            // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo
             DailyEndPointFactory factory = new DailyEndPointFactory(APIKey.DEMO);
             EndPoint<DailyStockResponse> endPoint = factory.getFullOutput(ParamInterval.FIFTEEN, ParamSymbol.MSFT);
             DailyStockResponse response = endPoint.call(DailyStockResponse.class);

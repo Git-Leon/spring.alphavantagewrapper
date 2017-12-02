@@ -19,6 +19,6 @@ public enum ParamInterval {
     @Override
     public String toString() {
         // API representation
-        return minuteInterval + "min";
+        return "&interval=" + minuteInterval + "min";
     }
 }
