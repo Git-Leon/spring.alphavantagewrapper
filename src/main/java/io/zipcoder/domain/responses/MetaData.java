@@ -49,4 +49,14 @@ public class MetaData {
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
+
+    @Override
+    public String toString() {
+        return "MetaData{"+
+                "information='" + information + "'," +
+                "symbol='" + symbol + "'," +
+                "lastRefreshed='" + lastRefreshed + "'," +
+                "timeZone='" + timeZone + "'}";
+    }
+
 }

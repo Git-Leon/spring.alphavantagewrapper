@@ -9,6 +9,6 @@ public enum ParamOutputSize {
 
     public String toString() {
         // API representation
-        return this.name().toLowerCase();
+        return "&outputsize="+this.name().toLowerCase();
     }
 }
