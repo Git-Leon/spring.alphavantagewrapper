@@ -16,9 +16,11 @@ public final class EndPointFactory<T extends StockResponse> {
     private final Logger log = Logger.getLogger(getClass().getSimpleName());
     private final APIKey apiKey;
 
+
     public EndPointFactory(APIKey apiKey) {
         this.apiKey = apiKey;
     }
+
 
     protected EndPoint<T> get(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
         EndPoint<T> endPoint = new EndPoint(function, interval, symbol, outputSize, apiKey.toString());
@@ -43,5 +45,4 @@ public final class EndPointFactory<T extends StockResponse> {
     public EndPoint get(String function, String interval, String symbol) {
         return get(function, interval, symbol, ParamOutputSize.FULL.toString());
     }
-
 }

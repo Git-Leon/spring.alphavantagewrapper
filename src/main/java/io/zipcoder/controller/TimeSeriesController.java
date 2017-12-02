@@ -34,26 +34,31 @@ abstract public class TimeSeriesController<
         this.cls = cls;
     }
 
+
     @GetMapping(value = "/getFull")
     public ResponseEntity<StockResponseType> getFull(
             @PathVariable("interval") String interval,
             @PathVariable("symbol") String symbol) {
 
-        return get(FunctionalUtils.bind(endpointFactory::getFullOutput, interval, symbol));
+        return get(endpointFactory::getFullOutput, interval, symbol);
     }
+
 
     @GetMapping(value = "/getCompact")
     public ResponseEntity<StockResponseType> getCompact(
             @PathVariable("interval") String interval,
             @PathVariable("symbol") String symbol) {
 
-        return get(FunctionalUtils.bind(endpointFactory::getCompactOutput, interval, symbol));
+        return get(endpointFactory::getCompactOutput, interval, symbol);
     }
 
-    public ResponseEntity<StockResponseType> get(
-            Supplier<EndPoint<StockResponseType>> getMethod) {
+
+    private ResponseEntity<StockResponseType> get(
+            BiFunction<String, String, EndPoint<StockResponseType>> getMethod,
+            String interval, String symbol) {
+
         MultiValueMap<String, String> headers = null;
-        EndPoint<StockResponseType> endpoint = getMethod.get();
+        EndPoint<StockResponseType> endpoint = FunctionalUtils.bind(getMethod, interval, symbol).get();
         StockResponseType stockResponse = endpoint.call(cls);
         return new ResponseEntity<>(stockResponse, headers, HttpStatus.OK);
     }

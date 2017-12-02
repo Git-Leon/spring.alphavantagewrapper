@@ -50,5 +50,4 @@ public abstract class TemporalEndPointFactory<StockResponseType extends StockRes
                 ParamInterval.valueOf(interval),
                 ParamSymbol.valueOf(symbol));
     }
-
 }

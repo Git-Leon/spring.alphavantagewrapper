@@ -25,10 +25,10 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     // TODO - Find solution for dynamic annotation
     protected HashMap<Date, T> temporalResolutionData;
 
-    // TODO - Remove method declaration, insert method definition once dynamic annotation solution discovered
+    // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
     abstract public HashMap<Date, T> getTemporalResolutionData();
 
-    // TODO - Remove method declaration, insert method definition once dynamic annotation solution discovered
+    // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
     abstract public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData);
 
     public MetaData getMetaData() {
@@ -43,7 +43,7 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     public String toString() {
         return "StockResponse{" +
                 "metadata='" + metaData.getInformation()  + '\'' +
-          //      ", time=" + temporalResolutionData.toString() +
+                ", time=" + temporalResolutionData.toString() +
                 '}';
     }
 }

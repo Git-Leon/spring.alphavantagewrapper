@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/daily")
-public class DailyTimeSeriesController  extends TimeSeriesController<DailyStockResponse,DailyEndPointFactory> {
+public class DailyTimeSeriesController extends TimeSeriesController<DailyStockResponse,DailyEndPointFactory> {
     public DailyTimeSeriesController() {
         super(new DailyEndPointFactory(), DailyStockResponse.class);
     }
