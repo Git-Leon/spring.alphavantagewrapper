@@ -27,10 +27,18 @@ public abstract class TemporalEndPointFactory<StockResponseType extends StockRes
         this.paramFunction = paramFunction;
     }
 
-    protected EndPoint<StockResponseType> get(ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
-        return factory.get(paramFunction, interval, symbol, outputSize);
+    // TODO - Fix this strange abstraction
+    protected EndPoint<StockResponseType> get(ParamSymbol symbol) {
+        return get(null, symbol, null);
     }
 
+    // TODO - Fix this strange abstraction
+    protected EndPoint<StockResponseType> get(ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
+        return factory.get(paramFunction, null, symbol, null);
+    }
+
+
+    // This method is only applicable to Daily and Intraday >>> TODO - Fix this
     public EndPoint<StockResponseType> getFullOutput(ParamInterval interval, ParamSymbol symbol) {
         return get(interval, symbol, ParamOutputSize.FULL);
     }
