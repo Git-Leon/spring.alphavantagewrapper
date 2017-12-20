@@ -22,16 +22,14 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     @JsonProperty("Meta Data")
     private MetaData metaData;
 
-    @JsonProperty("Time Series")
-    private HashMap<Date, T> temporalResolutionData;
+    // TODO - Find solution for dynamic annotation
+    protected HashMap<Date, T> temporalResolutionData;
 
-    public HashMap<Date, T> getTemporalResolutionData() {
-        return temporalResolutionData;
-    }
+    // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
+    abstract public HashMap<Date, T> getTemporalResolutionData();
 
-    public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData) {
-        this.temporalResolutionData = temporalResolutionData;
-    }
+    // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
+    abstract public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData);
 
     public MetaData getMetaData() {
         return metaData;

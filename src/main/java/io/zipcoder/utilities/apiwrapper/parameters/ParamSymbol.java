@@ -9,6 +9,6 @@ public enum ParamSymbol {
     @Override
     public String toString() {
         // API representation
-        return this.name();
+        return "&symbol="+ this.name();
     }
 }
