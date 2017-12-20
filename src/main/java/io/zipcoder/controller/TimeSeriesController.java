@@ -58,8 +58,8 @@ abstract public class TimeSeriesController<
             String interval, String symbol) {
 
         MultiValueMap<String, String> headers = null;
-        Supplier<EndPoint<StockResponseType>> methodSupplier = FunctionalUtils.bind(getMethod, interval, symbol);
-        StockResponseType stockResponse = methodSupplier.get().call(cls);
+        Supplier<EndPoint<StockResponseType>> getSupplier = FunctionalUtils.bind(getMethod, interval, symbol);
+        StockResponseType stockResponse = getSupplier.get().call(cls);
         return new ResponseEntity<>(stockResponse, headers, HttpStatus.OK);
     }
 
