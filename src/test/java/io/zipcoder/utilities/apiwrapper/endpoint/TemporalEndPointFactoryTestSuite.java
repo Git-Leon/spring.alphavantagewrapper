@@ -8,7 +8,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        DailyEndPointFactory.class,
+        DailyEndPointFactoryTest.class,
         IntradayEndPointFactoryTest.class,
         WeeklyEndPointFactoryTest.class,
         MonthlyEndPointFactoryTest.class
