@@ -18,9 +18,4 @@ public class DailyEndPointFactory extends TemporalEndPointFactory<DailyStockResp
     public DailyEndPointFactory() {
         super(ParamFunction.DAILY);
     }
-
-    @Override
-    protected EndPoint<DailyStockResponse> get(ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
-        return super.get(null, symbol, null);
-    }
 }
