@@ -21,6 +21,6 @@ public class IntradayEndPointFactory extends TemporalEndPointFactory<IntradaySto
 
     @Override
     protected EndPoint<IntradayStockResponse> get(ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
-        return factory.get(ParamFunction.INTRADAY, interval, symbol, outputSize);
+        return factory.get(paramFunction, interval, symbol, outputSize);
     }
 }

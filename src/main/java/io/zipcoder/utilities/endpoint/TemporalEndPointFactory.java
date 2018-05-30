@@ -12,7 +12,7 @@ import io.zipcoder.utilities.parameters.ParamSymbol;
  */
 public abstract class TemporalEndPointFactory<StockResponseType extends StockResponse> {
     protected final EndPointFactory<StockResponseType> factory;
-    private final ParamFunction paramFunction;
+    protected final ParamFunction paramFunction;
 
     public TemporalEndPointFactory(ParamFunction paramFunction) {
         this(APIKey.DEMO, paramFunction);
@@ -36,7 +36,6 @@ public abstract class TemporalEndPointFactory<StockResponseType extends StockRes
     protected EndPoint<StockResponseType> get(ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
         return factory.get(paramFunction, null, symbol, null);
     }
-
 
     // This method is only applicable to Daily and Intraday >>> TODO - Fix this
     public EndPoint<StockResponseType> getFullOutput(ParamInterval interval, ParamSymbol symbol) {
