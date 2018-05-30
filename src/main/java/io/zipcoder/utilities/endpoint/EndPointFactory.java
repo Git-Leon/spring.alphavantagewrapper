@@ -1,11 +1,11 @@
-package io.zipcoder.utilities.apiwrapper.endpoint;
+package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.StockResponse;
-import io.zipcoder.utilities.apiwrapper.APIKey;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamInterval;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamOutputSize;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamSymbol;
+import io.zipcoder.utilities.APIKey;
+import io.zipcoder.utilities.parameters.ParamFunction;
+import io.zipcoder.utilities.parameters.ParamInterval;
+import io.zipcoder.utilities.parameters.ParamOutputSize;
+import io.zipcoder.utilities.parameters.ParamSymbol;
 
 import java.util.logging.Logger;
 
@@ -24,7 +24,7 @@ public final class EndPointFactory<T extends StockResponse> {
 
     protected EndPoint<T> get(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize) {
         EndPoint<T> endPoint = new EndPoint(function, interval, symbol, outputSize, apiKey.toString());
-        log.info("Successfully created new endpoint.");
+        log.info("Successfully created new endpoint object.");
         log.info("EndPoint URI = " + endPoint.toString());
         return endPoint;
     }

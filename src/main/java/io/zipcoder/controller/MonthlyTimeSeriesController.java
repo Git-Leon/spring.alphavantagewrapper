@@ -1,10 +1,7 @@
 package io.zipcoder.controller;
 
 import io.zipcoder.domain.responses.MonthlyStockResponse;
-import io.zipcoder.domain.responses.WeeklyStockResponse;
-import io.zipcoder.utilities.apiwrapper.APIKey;
-import io.zipcoder.utilities.apiwrapper.endpoint.MonthlyEndPointFactory;
-import io.zipcoder.utilities.apiwrapper.endpoint.WeeklyEndPointFactory;
+import io.zipcoder.utilities.endpoint.MonthlyEndPointFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

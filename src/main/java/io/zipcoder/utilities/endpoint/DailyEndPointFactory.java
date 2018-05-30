@@ -1,11 +1,8 @@
-package io.zipcoder.utilities.apiwrapper.endpoint;
+package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.DailyStockResponse;
-import io.zipcoder.utilities.apiwrapper.APIKey;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamInterval;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamOutputSize;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamSymbol;
+import io.zipcoder.utilities.APIKey;
+import io.zipcoder.utilities.parameters.ParamFunction;
 
 /**
  * Created by leon on 9/15/17.

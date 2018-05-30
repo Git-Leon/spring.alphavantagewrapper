@@ -20,11 +20,6 @@ public class IntraDailyTemporalResolution extends TemporalResolution {
         this.volume = volume;
     }
 
-    @Override
-    public String toJsonString() {
-        return "{" + this.toString() +  "}";
-    }
-
     public String toString() {
         return super.toString() + ", volume: " + volume;
     }

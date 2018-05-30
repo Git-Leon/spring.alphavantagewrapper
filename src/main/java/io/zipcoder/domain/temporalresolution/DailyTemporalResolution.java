@@ -19,16 +19,6 @@ public class DailyTemporalResolution extends TemporalResolution {
         this.volume = volume;
     }
 
-    @Override
-    public String toJsonString() {
-        String open = super.getOpen();
-        String high = super.getHigh();
-        String low = super.getLow();
-        String close = super.getClose();
-
-        return "{" + toString() +  "}";
-    }
-
     public String toString() {
         return super.toString() + "volume: " + volume;
     }

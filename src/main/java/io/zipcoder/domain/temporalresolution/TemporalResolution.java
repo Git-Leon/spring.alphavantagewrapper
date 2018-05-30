@@ -2,11 +2,10 @@ package io.zipcoder.domain.temporalresolution;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.zipcoder.utilities.JSONString;
 import org.springframework.stereotype.Component;
 
 @Component
-public abstract class TemporalResolution implements JSONString {
+public abstract class TemporalResolution {
 
     @JsonProperty("1. open")
     private String open;

@@ -1,9 +1,8 @@
 package io.zipcoder.controller;
 
 import io.zipcoder.domain.responses.StockResponse;
-import io.zipcoder.utilities.apiwrapper.endpoint.EndPoint;
-import io.zipcoder.utilities.apiwrapper.endpoint.TemporalEndPointFactory;
-import io.zipcoder.utilities.general.FunctionalUtils;
+import io.zipcoder.utilities.endpoint.EndPoint;
+import io.zipcoder.utilities.endpoint.TemporalEndPointFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.MappedSuperclass;
 import java.util.function.BiFunction;
-import java.util.function.Supplier;
 
 /**
  * Created by leon on 11/30/17.
@@ -58,8 +56,8 @@ abstract public class TimeSeriesController<
             String interval, String symbol) {
 
         MultiValueMap<String, String> headers = null;
-        Supplier<EndPoint<StockResponseType>> getSupplier = FunctionalUtils.bind(getMethod, interval, symbol);
-        StockResponseType stockResponse = getSupplier.get().call(cls);
+        EndPoint<StockResponseType> endPoint = getMethod.apply(interval, symbol);
+        StockResponseType stockResponse = endPoint.call(cls);
         return new ResponseEntity<>(stockResponse, headers, HttpStatus.OK);
     }
 

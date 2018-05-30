@@ -1,12 +1,11 @@
-package io.zipcoder.utilities.apiwrapper.endpoint;
+package io.zipcoder.utilities.endpoint;
 
+import com.github.git_leon.StringAssembler;
 import io.zipcoder.domain.responses.StockResponse;
-import io.zipcoder.utilities.apiwrapper.APIKey;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamFunction;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamInterval;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamOutputSize;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamSymbol;
-import io.zipcoder.utilities.general.stringutils.StringAssembler;
+import io.zipcoder.utilities.parameters.ParamFunction;
+import io.zipcoder.utilities.parameters.ParamInterval;
+import io.zipcoder.utilities.parameters.ParamOutputSize;
+import io.zipcoder.utilities.parameters.ParamSymbol;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -16,7 +15,8 @@ public class EndPoint<StockResponseType extends StockResponse> {
     private final String apiCall;
 
     EndPoint(ParamFunction function, ParamInterval interval, ParamSymbol symbol, ParamOutputSize outputSize, String apiKey) {
-        this.apiCall = new StringAssembler("https://www.alphavantage.co/query?")
+        this.apiCall = new StringAssembler()
+                .append("https://www.alphavantage.co/query?")
                 .nonNullAppend(function)
                 .nonNullAppend(symbol)
                 .nonNullAppend(interval)

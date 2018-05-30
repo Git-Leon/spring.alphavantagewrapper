@@ -2,7 +2,6 @@ package io.zipcoder.domain.temporalresolution;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.zipcoder.utilities.JSONString;
 
 /**
  * Created by leon on 9/14/17.

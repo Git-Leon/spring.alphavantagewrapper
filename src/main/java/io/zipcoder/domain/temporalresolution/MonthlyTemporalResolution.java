@@ -2,7 +2,6 @@ package io.zipcoder.domain.temporalresolution;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.zipcoder.utilities.JSONString;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MonthlyTemporalResolution extends TemporalResolution {
@@ -15,11 +14,6 @@ public class MonthlyTemporalResolution extends TemporalResolution {
 
     public void setVolume(String volume) {
         this.volume = volume;
-    }
-
-    @Override
-    public String toJsonString() {
-        return "{" + toString() +  "}";
     }
 
     public String toString() {

@@ -1,4 +1,4 @@
-package io.zipcoder.utilities.apiwrapper.endpoint;
+package io.zipcoder.utilities.endpoint;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

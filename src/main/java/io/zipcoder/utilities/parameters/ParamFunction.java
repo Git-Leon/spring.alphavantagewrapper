@@ -1,4 +1,4 @@
-package io.zipcoder.utilities.apiwrapper.parameters;
+package io.zipcoder.utilities.parameters;
 
 /**
  * Created by leon on 9/14/17.

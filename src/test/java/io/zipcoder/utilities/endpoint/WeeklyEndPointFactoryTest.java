@@ -1,8 +1,8 @@
-package io.zipcoder.utilities.apiwrapper.endpoint;
+package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.WeeklyStockResponse;
-import io.zipcoder.utilities.apiwrapper.APIKey;
-import io.zipcoder.utilities.apiwrapper.parameters.ParamSymbol;
+import io.zipcoder.utilities.APIKey;
+import io.zipcoder.utilities.parameters.ParamSymbol;
 import org.junit.Assert;
 import org.junit.Test;
 
