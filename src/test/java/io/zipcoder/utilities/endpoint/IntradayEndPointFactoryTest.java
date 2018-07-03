@@ -1,7 +1,7 @@
 package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.IntradayStockResponse;
-import io.zipcoder.utilities.DemoAPIKey;
+import io.zipcoder.utilities.APIKeys;
 import io.zipcoder.utilities.parameters.ParamInterval;
 import io.zipcoder.utilities.parameters.ParamSymbol;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import org.junit.Test;
  * Created by leon on 12/1/17.
  */
 public class IntradayEndPointFactoryTest {
-    IntradayEndPointFactory factory = new IntradayEndPointFactory(DemoAPIKey.DEMO);
+    IntradayEndPointFactory factory = new IntradayEndPointFactory(APIKeys.DEMO);
 
     @Test
     public void test() {

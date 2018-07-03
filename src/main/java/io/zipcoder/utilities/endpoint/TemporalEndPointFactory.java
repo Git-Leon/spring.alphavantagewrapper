@@ -2,7 +2,7 @@ package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.StockResponse;
 import io.zipcoder.utilities.APIKey;
-import io.zipcoder.utilities.DemoAPIKey;
+import io.zipcoder.utilities.APIKeys;
 import io.zipcoder.utilities.parameters.ParamFunction;
 import io.zipcoder.utilities.parameters.ParamInterval;
 import io.zipcoder.utilities.parameters.ParamOutputSize;
@@ -16,11 +16,11 @@ public abstract class TemporalEndPointFactory<StockResponseType extends StockRes
     protected final ParamFunction paramFunction;
 
     public TemporalEndPointFactory(ParamFunction paramFunction) {
-        this(DemoAPIKey.DEMO, paramFunction);
+        this(APIKeys.DEMO, paramFunction);
     }
 
     public TemporalEndPointFactory(String apiKey, ParamFunction paramFunction) {
-        this(DemoAPIKey.valueOf(apiKey), paramFunction);
+        this(APIKeys.valueOf(apiKey), paramFunction);
     }
 
     TemporalEndPointFactory(APIKey apiKey, ParamFunction paramFunction) {
