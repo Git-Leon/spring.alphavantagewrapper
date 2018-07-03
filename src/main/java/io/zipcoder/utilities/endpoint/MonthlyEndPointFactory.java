@@ -2,6 +2,7 @@ package io.zipcoder.utilities.endpoint;
 
 import io.zipcoder.domain.responses.MonthlyStockResponse;
 import io.zipcoder.utilities.APIKey;
+import io.zipcoder.utilities.DemoAPIKey;
 import io.zipcoder.utilities.parameters.ParamFunction;
 
 /**
