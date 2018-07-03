@@ -20,16 +20,17 @@ import org.springframework.web.client.RestTemplate;
 
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 @EnableAutoConfiguration
 @SpringBootApplication
 public class DemoApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
+    private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
 
     @Bean
@@ -40,14 +41,38 @@ public class DemoApplication {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) {
         return args -> {
+            // You can use this framework to hit the endpoint below
             // https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo
+            // using the following routine...
             DailyEndPointFactory factory = new DailyEndPointFactory(APIKey.DEMO);
             EndPoint<DailyStockResponse> endPoint = factory.getFullOutput(ParamInterval.FIFTEEN, ParamSymbol.MSFT);
             DailyStockResponse response = endPoint.call(DailyStockResponse.class);
             MetaData metaData = response.getMetaData();
             HashMap<Date, DailyTemporalResolution> timeSeries = response.getTemporalResolutionData();
-            log.info(metaData.toString());
-            log.info(timeSeries.toString());
+
+            // retrieve results this way
+            System.out.println("---------------------");
+            System.out.println(new StringBuilder()
+                    .append(metaData.toString())
+                    .append("\n{Information = " + metaData.getInformation())
+                    .append("\nLast Refreshed = " + metaData.getLastRefreshed())
+                    .append("\nSymbol = " + metaData.getSymbol())
+                    .append("\nTime Zone = " + metaData.getTimeZone()+"}")
+                    .toString());
+
+            System.out.println("\n---------------------");
+            for (Map.Entry<Date, DailyTemporalResolution> timeSeriesEntry : timeSeries.entrySet()) {
+                DailyTemporalResolution dailyTemporalResolution = timeSeriesEntry.getValue();
+                System.out.println("\n---------------------");
+                System.out.println(new StringBuilder()
+                        .append("\n{Date = " + timeSeriesEntry.getKey())
+                        .append("\nVolume = " + dailyTemporalResolution.getVolume())
+                        .append("\nHigh = " + dailyTemporalResolution.getHigh())
+                        .append("\nLow = " + dailyTemporalResolution.getLow())
+                        .append("\nClose = " + dailyTemporalResolution.getClose())
+                        .append("\nOpen = " + dailyTemporalResolution.getOpen()+"}")
+                        .toString());
+            }
         };
     }
 }
