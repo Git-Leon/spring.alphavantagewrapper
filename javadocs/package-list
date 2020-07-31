@@ -1,0 +1,7 @@
+com.github.git_leon
+com.github.git_leon.controller
+com.github.git_leon.domain.responses
+com.github.git_leon.domain.temporalresolution
+com.github.git_leon.utilities
+com.github.git_leon.utilities.endpoint
+com.github.git_leon.utilities.parameters
