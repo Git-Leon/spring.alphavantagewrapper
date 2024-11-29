@@ -3,7 +3,7 @@ package com.github.git_leon.alphavantage.domain.responses;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.git_leon.alphavantage.domain.temporalresolution.MonthlyTemporalResolution;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
