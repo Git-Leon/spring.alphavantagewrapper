@@ -6,6 +6,7 @@ import com.github.git_leon.alphavantage.domain.temporalresolution.MonthlyTempora
 import javax.persistence.Entity;
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by leon on 9/15/17.
@@ -18,15 +19,15 @@ public class MonthlyStockResponse extends StockResponse<MonthlyTemporalResolutio
 
     // TODO - Abstract this to the StockResponse
     @JsonProperty("Time Series (Monthly)")
-    private HashMap<Date, MonthlyTemporalResolution> temporalResolutionData;
+    private Map<Date, MonthlyTemporalResolution> temporalResolutionData;
 
     // TODO - Abstract this to the StockResponse
-    public HashMap<Date, MonthlyTemporalResolution> getTemporalResolutionData() {
+    public Map<Date, MonthlyTemporalResolution> getTemporalResolutionData() {
         return temporalResolutionData;
     }
 
     // TODO - Abstract this to the StockResponse
-    public void setTemporalResolutionData(HashMap<Date, MonthlyTemporalResolution> temporalResolutionData) {
+    public void setTemporalResolutionData(Map<Date, MonthlyTemporalResolution> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
     }
 }

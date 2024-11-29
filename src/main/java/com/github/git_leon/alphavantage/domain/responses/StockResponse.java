@@ -10,6 +10,7 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 
 @MappedSuperclass
@@ -23,13 +24,13 @@ public abstract class StockResponse<T extends TemporalResolution> implements Ser
     private MetaData metaData;
 
     // TODO - Find solution for dynamic annotation
-    protected HashMap<Date, T> temporalResolutionData;
+    protected Map<Date, T> temporalResolutionData;
 
     // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
-    abstract public HashMap<Date, T> getTemporalResolutionData();
+    abstract public Map<Date, T> getTemporalResolutionData();
 
     // TODO - Remove method declaration, insert method definition whence dynamic annotation solution discovered
-    abstract public void setTemporalResolutionData(HashMap<Date, T> temporalResolutionData);
+    abstract public void setTemporalResolutionData(Map<Date, T> temporalResolutionData);
 
     public MetaData getMetaData() {
         return metaData;

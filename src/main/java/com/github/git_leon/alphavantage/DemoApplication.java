@@ -48,7 +48,7 @@ public class DemoApplication {
             EndPoint<DailyStockResponse> endPoint = factory.getFullOutput(ParamInterval.FIFTEEN, ParamSymbol.MSFT);
             DailyStockResponse response = endPoint.call(DailyStockResponse.class);
             MetaData metaData = response.getMetaData();
-            HashMap<Date, DailyTemporalResolution> timeSeries = response.getTemporalResolutionData();
+            Map<Date, DailyTemporalResolution> timeSeries = response.getTemporalResolutionData();
 
             // retrieve results this way
             System.out.println("---------------------");

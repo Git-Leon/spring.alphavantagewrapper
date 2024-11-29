@@ -6,6 +6,7 @@ import com.github.git_leon.alphavantage.domain.temporalresolution.IntraDailyTemp
 import javax.persistence.Entity;
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by leon on 9/15/17.
@@ -18,15 +19,15 @@ public class IntradayStockResponse extends StockResponse<IntraDailyTemporalResol
 
     // TODO - Abstract this to the StockResponse
     @JsonProperty("Time Series (Intraday)")
-    private HashMap<Date, IntraDailyTemporalResolution> temporalResolutionData;
+    private Map<Date, IntraDailyTemporalResolution> temporalResolutionData;
 
     // TODO - Abstract this to the StockResponse
-    public HashMap<Date, IntraDailyTemporalResolution> getTemporalResolutionData() {
+    public Map<Date, IntraDailyTemporalResolution> getTemporalResolutionData() {
         return temporalResolutionData;
     }
 
     // TODO - Abstract this to the StockResponse
-    public void setTemporalResolutionData(HashMap<Date, IntraDailyTemporalResolution> temporalResolutionData) {
+    public void setTemporalResolutionData(Map<Date, IntraDailyTemporalResolution> temporalResolutionData) {
         this.temporalResolutionData = temporalResolutionData;
     }
 }
