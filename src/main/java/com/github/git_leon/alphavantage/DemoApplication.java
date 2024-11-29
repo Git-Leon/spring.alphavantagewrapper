@@ -8,38 +8,27 @@ import com.github.git_leon.alphavantage.utilities.endpoint.DailyEndPointFactory;
 import com.github.git_leon.alphavantage.utilities.endpoint.EndPoint;
 import com.github.git_leon.alphavantage.utilities.parameters.ParamInterval;
 import com.github.git_leon.alphavantage.utilities.parameters.ParamSymbol;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.web.client.RestTemplate;
 
 import java.sql.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 @EnableAutoConfiguration
 @SpringBootApplication
 public class DemoApplication {
 
-    private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
-
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-
-
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
+    @EventListener
+    public void onShutdown(ContextClosedEvent event) {
+        System.out.println("Application context is shutting down.");
     }
-
     @EventListener(ApplicationReadyEvent.class)
     public void onApplicationReady() {
         // You can use this framework to hit the endpoint below

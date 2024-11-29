@@ -33,6 +33,10 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <!-- Hibernate (compatible with Spring Boot 3.x) -->
         <dependency>
             <groupId>org.hibernate</groupId>
