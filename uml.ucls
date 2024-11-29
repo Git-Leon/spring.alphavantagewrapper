@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <enumeration id="1" language="java" name="com.github.git_leon.utilities.parameters.ParamOutputSize" 
+  <enumeration id="1" language="java" name="parameters.utilities.com.github.git_leon.alphavantage.ParamOutputSize"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/parameters/ParamOutputSize.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -12,7 +12,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="2" language="java" name="com.github.git_leon.utilities.parameters.ParamFunction" 
+  <enumeration id="2" language="java" name="parameters.utilities.com.github.git_leon.alphavantage.ParamFunction"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/parameters/ParamFunction.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -23,7 +23,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="3" language="java" name="com.github.git_leon.utilities.parameters.ParamInterval" 
+  <enumeration id="3" language="java" name="parameters.utilities.com.github.git_leon.alphavantage.ParamInterval"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/parameters/ParamInterval.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -34,7 +34,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="4" language="java" name="com.github.git_leon.utilities.parameters.ParamSymbol" 
+  <enumeration id="4" language="java" name="parameters.utilities.com.github.git_leon.alphavantage.ParamSymbol"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/parameters/ParamSymbol.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -45,7 +45,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="5" language="java" name="com.github.git_leon.utilities.endpoint.IntradayEndPointFactory" 
+  <class id="5" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.IntradayEndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/IntradayEndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -56,7 +56,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.github.git_leon.utilities.endpoint.DailyEndPointFactory" 
+  <class id="6" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.DailyEndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/DailyEndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -67,7 +67,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="com.github.git_leon.utilities.endpoint.MonthlyEndPointFactory" 
+  <class id="7" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.MonthlyEndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/MonthlyEndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -78,7 +78,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.github.git_leon.utilities.endpoint.TemporalEndPointFactory" 
+  <class id="8" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.TemporalEndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/TemporalEndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -89,7 +89,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.github.git_leon.utilities.endpoint.EndPointFactory" 
+  <class id="9" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.EndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/EndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -100,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="com.github.git_leon.utilities.endpoint.WeeklyEndPointFactory" 
+  <class id="10" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.WeeklyEndPointFactory"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/WeeklyEndPointFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -111,7 +111,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="com.github.git_leon.utilities.endpoint.EndPoint" 
+  <class id="11" language="java" name="endpoint.utilities.com.github.git_leon.alphavantage.EndPoint"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/endpoint/EndPoint.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -122,7 +122,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="12" language="java" name="com.github.git_leon.utilities.APIKey" project="spring.alphavantagewrapper" 
+  <enumeration id="12" language="java" name="utilities.com.github.git_leon.alphavantage.APIKey" project="spring.alphavantagewrapper"
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/utilities/APIKey.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1188" y="1508"/>    
@@ -132,7 +132,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="13" language="java" name="com.github.git_leon.domain.temporalresolution.IntraDailyTemporalResolution" 
+  <class id="13" language="java" name="temporalresolution.domain.com.github.git_leon.alphavantage.IntraDailyTemporalResolution"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/domain/temporalresolution/IntraDailyTemporalResolution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -143,7 +143,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="com.github.git_leon.domain.temporalresolution.TemporalResolution" 
+  <class id="14" language="java" name="temporalresolution.domain.com.github.git_leon.alphavantage.TemporalResolution"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/domain/temporalresolution/TemporalResolution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -154,7 +154,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="com.github.git_leon.domain.temporalresolution.WeeklyTemporalResolution" 
+  <class id="15" language="java" name="temporalresolution.domain.com.github.git_leon.alphavantage.WeeklyTemporalResolution"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/domain/temporalresolution/WeeklyTemporalResolution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -165,7 +165,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="com.github.git_leon.domain.temporalresolution.MonthlyTemporalResolution" 
+  <class id="16" language="java" name="temporalresolution.domain.com.github.git_leon.alphavantage.MonthlyTemporalResolution"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/domain/temporalresolution/MonthlyTemporalResolution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -176,7 +176,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="com.github.git_leon.domain.temporalresolution.DailyTemporalResolution" 
+  <class id="17" language="java" name="temporalresolution.domain.com.github.git_leon.alphavantage.DailyTemporalResolution"
     project="spring.alphavantagewrapper" 
     file="/spring.alphavantagewrapper/src/main/java/com/github/git_leon/domain/temporalresolution/DailyTemporalResolution.java" 
     binary="false" corner="BOTTOM_RIGHT">    
