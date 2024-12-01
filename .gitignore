@@ -114,6 +114,3 @@ Temporary Items
 #maven build target
 target/
 
-.mvn/*
-mvnw
-mvnw.cmd
