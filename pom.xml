@@ -68,11 +68,7 @@
             <version>3.1.0</version>
         </dependency>
 
-<<<<<<< Updated upstream
         <!-- Custom Dependency -->
-=======
-
->>>>>>> Stashed changes
         <dependency>
             <groupId>com.github.git_leon</groupId>
             <artifactId>stringutils</artifactId>
