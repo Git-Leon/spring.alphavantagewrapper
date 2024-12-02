@@ -11,9 +11,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.3.0</version> <!-- Upgraded to Spring Boot 3.3.x -->
+        <relativePath/>
     </parent>
+
+    <properties>
+        <java.version>17</java.version> <!-- Ensure Java 17 or later -->
+    </properties>
 
     <repositories>
         <repository>
@@ -28,23 +32,22 @@
         </repository>
     </repositories>
 
-
     <dependencies>
+        <!-- Hibernate Core: Updated for compatibility with Jakarta -->
         <dependency>
-            <groupId>org.hibernate</groupId>
+            <groupId>org.hibernate.orm</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.0.11.Final</version>
-            <scope>compile</scope>
+            <version>6.2.6.Final</version> <!-- Compatible with Spring Boot 3.x -->
         </dependency>
 
-
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
+        <!-- Spring dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -52,16 +55,20 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Jackson Databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+
+        <!-- Jakarta Persistence API (Replaces javax.persistence) -->
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
+        <!-- Custom Dependency -->
         <dependency>
             <groupId>com.github.git_leon</groupId>
             <artifactId>stringutils</artifactId>
@@ -71,30 +78,28 @@
 
     <build>
         <plugins>
-            <!--configure for java 8-->
+            <!-- Maven Compiler Plugin: Updated for Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version> <!-- Ensure compatibility with Java 17 -->
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
-            <!-- put your configurations here -->
+            <!-- Spring Boot Maven Plugin -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-
-            <!-- configure for uber jar -->
+            <!-- Maven Shade Plugin for Uber Jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                </configuration>
+                <version>3.4.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -105,9 +110,5 @@
                 </executions>
             </plugin>
         </plugins>
-
-
     </build>
-
-
 </project>
